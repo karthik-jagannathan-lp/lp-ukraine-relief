@@ -98,7 +98,7 @@ const DonationsPopup = ({
                         className="-ml-1 mr-2 h-5 w-5"
                         aria-hidden="true"
                       />
-                      <span>Donate now</span>
+                      <span>Donate now.</span>
                     </a>
                   </div>
                   {/* <div className="border-b border-gray-200">
