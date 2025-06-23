@@ -4,7 +4,6 @@ import { Donation } from 'types'
 import { FILTER_DONATION_DATE } from './constants'
 
 export const getDonations = async (serviceKey: string) => {
-  return [];
   const credentials = JSON.parse(Buffer.from(serviceKey, 'base64').toString())
   const donations: Donation[] = (
     await extractSheets({
