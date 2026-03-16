@@ -219,83 +219,60 @@ const Index = ({
                       </section>
                     </div>
                   </aside>
-                  <div className="max-w-3xl mx-auto">
+                  <div className="max-w-3xl mx-auto" id="main-content">
                     <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-6">
-                      Dear Friends of Erie and Beyond,                    </h2>
+                      Help Secure Clean Water for Chornomorsk's Hospital
+                    </h2>
                     <p className="mb-4">
-                      We’ve just received a heartfelt message from our sister city of <strong>Chornomorsk, Ukraine</strong>—a message rooted in resilience, urgency, and hope.
+                      Chornomorsk, Ukraine—Erie's sister city—continues to face daily attacks on its critical civilian infrastructure. Power and heating systems have been repeatedly targeted, and intelligence services are now warning that <b>water supply facilities may be the next primary target,</b> especially during the summer months.
                     </p>
-
-                    <div className="mb-6">
-                      <img src="ukraine-map.png" alt="Map showing Chornomorsk" className="w-full rounded-md shadow-sm" />
-                      <p className="text-sm text-center mt-2 text-gray-500">Chornomorsk, Ukraine</p>
-                    </div>
-
                     <p className="mb-4">
-                      As nearby Odesa’s hospitals struggle to meet the growing needs of civilians and military personnel, Chornomorsk Hospital has been asked to step up as a key provider of civilian medical care.
+                      In response, the Town of Chornomorsk is investing in resilience to protect its residents and ensure continuity of essential services.
                     </p>
                     <div className="mb-6">
-                      <img
-                        src="ukraine-damage.jpg"
-                        className="rounded-lg object-cover shadow-lg w-full"
-                        alt="Destruction in Ukraine"
-
-                      />
-                      <p className="text-sm text-center mt-2 text-gray-500">Damage to shipping containers in the port of Chornomorsk</p>
-
+                      <img src="hospital.jpeg" alt="Chornomorsk Hospital" className="w-full rounded-md shadow-sm" />
+                      <p className="text-sm text-center mt-2 text-gray-500">Chornomorsk Hospital and staff</p>
+                    </div>
+                    <div className="bg-gray-50 border-l-4 border-blue-500 p-6 rounded mb-6">
+                      <h3 className="text-xl font-bold mb-4">The Critical Need</h3>
+                      <p className="mb-4">
+                        The town's hospital is being developed as a <b>Resilience Center</b>—a facility capable of operating independently in emergency conditions, or "island mode," during prolonged outages.
+                      </p>
+                      <ul className="space-y-2 mb-4">
+                        <li>✅ <b>Diesel generators</b> are already in place</li>
+                        <li>✅ <b>Solar panels</b> and <b>battery storage</b> are being sourced through international donors</li>
+                        <li>❌ <b>A secure water supply is still missing</b></li>
+                      </ul>
+                      <p>
+                        Without access to water, the hospital cannot function autonomously—and in times of crisis, this puts both patients and the broader community at serious risk.
+                      </p>
                     </div>
 
-                    <p className="mb-4">
-                      The hospital itself has recently suffered damage from bombings—yet the staff continues to serve their community with strength and compassion.
-                    </p>
-                    <div className="mb-6">
-                      <img src="hospital-damage.jpg" alt="Damage to the hospital" className="w-full rounded-md shadow-sm" />
-                      <p className="text-sm text-center mt-2 text-gray-500">Chornomorsk Hospital after being damaged by bombs</p>
-
+                    <div className="bg-gray-50 border-l-4 border-green-500 p-6 rounded mb-6">
+                      <h3 className="text-xl font-bold mb-4">The Solution</h3>
+                      <p className="mb-4">
+                        Chornomorsk plans to <b>drill an artesian water well</b> on hospital grounds. This well would:
+                      </p>
+                      <ul className="list-disc list-inside space-y-2 mb-4">
+                        <li>Provide a <b>reliable, independent water source</b> for hospital operations</li>
+                        <li>Serve as a <b>water truck filling point</b> for emergency distribution throughout the town</li>
+                        <li>Strengthen the hospital's ability to operate during infrastructure attacks or outages</li>
+                      </ul>
+                      <p>
+                        The town has already experienced water shortages following previous attacks, and the current emergency water distribution system is <b>not sufficient</b>—even during winter conditions.
+                      </p>
                     </div>
 
-                    <p className="mb-4">
-                      Despite these hardships, they are taking on more patients than ever. But there is one critical gap in care they cannot fill alone:
-                    </p>
-
-                    <div className="bg-gray-100 p-4 rounded mb-4">
-                      <p className="mb-2 font-medium">They urgently need a mammography machine.</p>
-                      <p>This vital equipment will allow early detection and screening for breast cancer—especially important for women displaced by the war.</p>
+                    <div className="bg-blue-50 border border-blue-200 p-6 rounded mb-6">
+                      <h3 className="text-xl font-bold mb-4">Funding Goal</h3>
+                      <p className="text-2xl font-bold text-blue-600 mb-4">$60,000 USD</p>
+                      <p className="mb-4">
+                        Your support will directly fund a life‑saving infrastructure project that helps ensure <b>medical care, clean water, and community resilience</b> for the people of Chornomorsk.
+                      </p>
+                      <p className="font-medium">
+                        <b>Every dollar brings us closer to a hospital that can stand strong—no matter the circumstances.</b>
+                      </p>
                     </div>
-
-                    <p className="mb-4">
-                      <strong>Estimated cost:</strong> $240,000 — far beyond the means of the town, the hospital, or its local volunteers.
-                    </p>
-
-                    <p className="mb-4">
-                      Ukrainian businesses have already pledged support. Now, they are asking if Erie—and our extended community—can help too.
-                    </p>
-
-                    <div className="bg-gray-50 border border-gray-200 p-4 rounded mb-4">
-                      <p className="mb-2"><strong>Fundraising Goal:</strong> $300,000</p>
-                      <p>To purchase, deliver, and install a certified mammography machine at Chornomorsk Hospital.</p>
-                      <p className="mt-2">Every donation helps. Even $10 or $20 adds up.</p>
-                    </div>
-
-                    <p className="mb-4">
-                      Let’s come together in solidarity with Chornomorsk. Every act of generosity brings hope and healing to those who need it most.
-                    </p>
-
-                    <div className="mb-6">
-                      <img src="/community-support.jpg" alt="Community support" className="w-full rounded-md shadow-sm" />
-
-                    </div>
-
-                    <div className="mt-6 p-4 bg-gray-100 rounded">
-                      <p className="mb-1">Questions or want to learn more?</p>
-                      <a href="mailto:erie.chornomorsk@logisticsplus.com" className="text-blue-600 hover:underline">
-                        erie.chornomorsk@logisticsplus.com
-                      </a>
-                    </div>
-
-                    <p className="mt-8 text-center">
-                      Erie has always stood for international friendship and compassion. Let’s carry that spirit forward—especially now, when it’s needed most.
-                    </p>
                   </div>
                   <Updates />
                 </div>
