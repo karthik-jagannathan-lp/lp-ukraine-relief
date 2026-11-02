@@ -1,15 +1,13 @@
 import { FireIcon, HeartIcon, ShareIcon } from '@heroicons/react/solid'
-import DonationsPopup from 'components/DonationsPopup'
 import ProgressBar from 'components/ProgressBar'
 import SharePopup from 'components/SharePopup'
 import Updates from 'components/Updates'
-import { FILTER_DONATION_DATE } from 'lib/constants'
 import { getDonations } from 'lib/server'
 import moment from 'moment'
 import { InferGetStaticPropsType } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
-import { useMemo, useState } from 'react'
+import { useState } from 'react'
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 
@@ -18,25 +16,7 @@ const Index = ({
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
   const donations = fallbackData.donations
   const [shareOpen, setShareOpen] = useState(false)
-  const [donationsOpen, setDonationsOpen] = useState(false)
 
-  const donationsShortList = useMemo(() => {
-    if (donations.length === 0) {
-      return null;
-    }
-    const recent = donations
-      .sort(function (left, right) {
-        return moment
-          .utc(right.payment_date)
-          .diff(moment.utc(left.payment_date))
-      })
-      .slice(0, 3)
-
-    const highest = donations.reduce(function (prev, current) {
-      return +prev.mc_gross > +current.mc_gross ? prev : current
-    })
-    return [{ ...highest, comment: 'Top donation' }, ...recent]
-  }, [])
   const totalDonationsInPastDay = () => {
     const today = moment().startOf('day')
     const yesterday = moment().subtract(1, 'day').startOf('day')
@@ -50,10 +30,6 @@ const Index = ({
     <>
       <ToastContainer />
       <SharePopup popupState={{ shareOpen, setShareOpen }} />
-      <DonationsPopup
-        donations={donations}
-        popupState={{ donationsOpen, setDonationsOpen }}
-      />
 
       <Head>
         <title>Fundraiser by Logistics Plus</title>
@@ -161,59 +137,6 @@ const Index = ({
                                 </span>
                               </div>
                             )}
-
-                            <div className="mt-9 flow-root">
-                              <ul
-                                role="list"
-                                className=" divide-y divide-gray-200"
-                              >
-                                {donationsShortList && donationsShortList.map((donation) => (
-                                  <li
-                                    key={donation.id}
-                                    className="flex items-center space-x-3 py-4"
-                                  >
-                                    <div className="flex-shrink-0">
-                                      <img
-                                        className="h-8 w-8 rounded-full"
-                                        src="/avatar.svg"
-                                        alt=""
-                                      />
-                                    </div>
-                                    <div className="min-w-0 flex-1">
-                                      <p className="text-sm font-medium text-gray-900">
-                                        <span>{donation.name}</span>
-                                      </p>
-                                      <p className="text-sm text-gray-500">
-                                        <span>
-                                          {' '}
-                                          {/* {formatMoney(
-                                            donation.mc_gross
-                                          )} •  */}
-                                          {donation.date}
-                                          {donation.comment && (
-                                            <>
-                                              {' '}
-                                              •{' '}
-                                              <span className="cursor-pointer underline underline-offset-1">
-                                                {donation.comment}
-                                              </span>
-                                            </>
-                                          )}
-                                        </span>
-                                      </p>
-                                    </div>
-                                  </li>
-                                ))}
-                              </ul>
-                            </div>
-                            <div className="mt-6">
-                              <button
-                                onClick={() => setDonationsOpen(true)}
-                                className="block w-full rounded-md border border-gray-300 bg-white px-4 py-2 text-center text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50"
-                              >
-                                View all
-                              </button>
-                            </div>
                           </div>
                         </div>
                       </section>
@@ -323,54 +246,6 @@ const Index = ({
                           </span>
                         </div>
                       )}
-
-                      <div className="mt-9 flow-root">
-                        <ul role="list" className=" divide-y divide-gray-200">
-                          {donationsShortList && donationsShortList.map((donation) => (
-                            <li
-                              key={donation.id}
-                              className="flex items-center space-x-3 py-4"
-                            >
-                              <div className="flex-shrink-0">
-                                <img
-                                  className="h-8 w-8 rounded-full"
-                                  src="/avatar.svg"
-                                  alt=""
-                                />
-                              </div>
-                              <div className="min-w-0 flex-1">
-                                <p className="text-sm font-medium text-gray-900">
-                                  <span>{donation.name}</span>
-                                </p>
-                                <p className="text-sm text-gray-500">
-                                  <span>
-                                    {' '}
-                                    {/* {formatMoney(donation.mc_gross)} •{' '} */}
-                                    {donation.date}
-                                    {donation.comment && (
-                                      <>
-                                        {' '}
-                                        •{' '}
-                                        <span className="cursor-pointer underline underline-offset-1">
-                                          {donation.comment}
-                                        </span>
-                                      </>
-                                    )}
-                                  </span>
-                                </p>
-                              </div>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                      <div className="mt-6">
-                        <button
-                          onClick={() => setDonationsOpen(true)}
-                          className="block w-full rounded-md border border-gray-300 bg-white px-4 py-2 text-center text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50"
-                        >
-                          View all
-                        </button>
-                      </div>
                     </div>
                   </div>
                 </section>
